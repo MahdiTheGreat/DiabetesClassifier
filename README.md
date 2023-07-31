@@ -45,21 +45,14 @@ Pay attention that one of the most important features of numerical data is the p
 # Building the model
 In this step, we define an XGBoost Classifier and train it on the dataset. We use the following parameters to build the model:
 
-Learning_rate=0.1
-
-Max_depth=4
-
-N_estimator=200
-
-Subsample = 0.5
-
-Colsample_bytree=1
-
-Random_seed=123
-
-Eval_metric='auc'
-
-Verbosity=1
+- Learning_rate=0.1
+- Max_depth=4
+- N_estimator=200
+- Subsample = 0.5
+- Colsample_bytree=1
+- Random_seed=123
+- Eval_metric='auc'
+- Verbosity=1
 
 To perform learning operations, set early_stopping_rounds equal to 10 so that learning does not take time.
 At the end, we report the accuracy of the model on the training and test data and also calculate the confusion matrix, precision and recall.
@@ -72,13 +65,10 @@ xgboost.XGBClassifier().get_params()
 
 All these parameters have a significant effect on the performance of this model. To find the best parameters, we can build the model on different combinations of these parameters and output the best model. In this part, We need to test the model on different combinations of the following parameters and output the best model. Below are recommended values for parameters to try:
 
-learning_rate_list = [0.02, 0.05, 0.1, 0.3] 
-
-max_depth_list = [2, 3, 4] 
-
-n_estimators_list = [100, 200, 300] 
-
-colsample_bytree = [0.8, 1]
+- learning_rate_list = [0.02, 0.05, 0.1, 0.3]
+- max_depth_list = [2, 3, 4]
+- n_estimators_list = [100, 200, 300]
+- colsample_bytree = [0.8, 1]
 
 We can use evoluionatry algorithms to solve this problem, however becasue the search space isn't that big, we can examine all the different possible states and select the best one. 
 
@@ -91,12 +81,13 @@ This is essentially our fitness function for the models.
 
 We use the following parameters for the initial construction of the model:
 
-eval_metric='auc'
-
-subsample = 0.5
-
+- eval_metric='auc'
+- subsample = 0.5
 After building the model and performing learning on all combinations of parameters, we report the best parameters. We get the best model (set by the best parameters) and we calculate the accuracy of the test data, the confusion matrix, and the precision and recall for this model.
 At the end, we plot the changes in the model via changing the four parameters mentioned in the previous part and show what effect the changes of these parameters have had on the accuracy or performance of the model.
+
+
+
 
 
 
