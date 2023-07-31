@@ -86,6 +86,7 @@ We use the following parameters for the initial construction of the model:
 
 - eval_metric='auc'
 - subsample = 0.5
+
 After building the model and performing learning on all combinations of parameters, we report the best parameters. We get the best model (set by the best parameters) and we calculate the accuracy of the test data, the confusion matrix, and the precision and recall for this model.
 At the end, we plot the changes in the model via changing the four parameters mentioned in the previous part and show what effect the changes of these parameters have had on the accuracy or performance of the model.
 
