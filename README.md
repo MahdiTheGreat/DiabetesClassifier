@@ -61,7 +61,7 @@ At the end, we report the accuracy of the model on the training and test data an
 As you saw in the previous section. Many parameters are involved in making the model.
 To see all the parameters, you can use the following line of code:
 
-xgboost.XGBClassifier().get_params()
+<code>xgboost.XGBClassifier().get_params()<code>
 
 All these parameters have a significant effect on the performance of this model. To find the best parameters, we can build the model on different combinations of these parameters and output the best model. In this part, We need to test the model on different combinations of the following parameters and output the best model. Below are recommended values for parameters to try:
 
@@ -74,8 +74,12 @@ We can use evoluionatry algorithms to solve this problem, however becasue the se
 
 Note that there is no need to create models manually and you can use GridSearchCV. In this case, use cross-validation 2 with 3 points of separation. For the scoring function, we can use the following function (it should be noted that we must import roc_auc_score from the sklearn.metrics package):
 ‎
- <code>def my_roc_auc_score(model, X, y): 
-  return roc_auc_score(y, model.predict_proba(X)[:,1]))<code>
+<br>
+ <code>
+ def my_roc_auc_score(model, X, y): 
+  return roc_auc_score(y, model.predict_proba(X)[:,1]))
+  <code>
+ <br>
 
 This is essentially our fitness function for the models.
 
