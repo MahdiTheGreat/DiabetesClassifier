@@ -75,8 +75,7 @@ We can use evoluionatry algorithms to solve this problem, however becasue the se
 Note that there is no need to create models manually and you can use GridSearchCV. In this case, use cross-validation 2 with 3 points of separation. For the scoring function, we can use the following function (it should be noted that we must import roc_auc_score from the sklearn.metrics package):
 ‎
 <br>
- <code>
- def my_roc_auc_score(model, X, y): 
+ <code>def my_roc_auc_score(model, X, y): 
   return roc_auc_score(y, model.predict_proba(X)[:,1]))
   </code>
  </br>
